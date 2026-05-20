@@ -1,8 +1,8 @@
-name: Keep Supabase Alive
+name: ping
 
 on:
   schedule:
-    - cron: "0 */12 * * *"
+    - cron: "*/30 * * * *"
   workflow_dispatch:
 
 jobs:
@@ -12,5 +12,4 @@ jobs:
     steps:
       - name: Ping Supabase
         run: |
-          curl "https://ccahshwqplmmavjeaujv.supabase.co/rest/v1/" \
-          -H "apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNjYWhzaHdxcGxtbWF2amVhdWp2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ2Mjc1OTksImV4cCI6MjA5MDIwMzU5OX0.TR4m4NKvXFR86Q1M_Rinmif2PpHpTJCb-IY9l-FlysM"
+          curl -X GET "https://ccahshwqplmmavjeaujv.supabase.co"
